@@ -1,7 +1,7 @@
 var activePlayer = 0
 // 0 = Player 1, 1 = Player 2
 
-var scores = [0,99]
+var scores = [0,0]
 var roundScore = 0
 
 var dice
@@ -11,6 +11,8 @@ var playerCurrentScoreId
 
 $("#roll-dice").on("click", function(){
   dice = Math.floor(Math.random() * 6) + 1
+  $('#dice').attr('src', `dice-${dice}.png`)
+
   if (dice === 1) {
     console.log("player " + (activePlayer + 1 ) + " has lost their turn")
     activePlayer = changeTurn(activePlayer)
@@ -28,10 +30,10 @@ function updateCurrentScore() {
   playerCurrentScoreId = `#current-${activePlayer}`
   $(`${playerCurrentScoreId}`).text(scores[activePlayer])
 
-  if (scores[activePlayer] < 100){
-    activePlayer = changeTurn(activePlayer)
-  } else {
+  if (scores[activePlayer] >= 100){
     $('#winner-message').text(`Player ${activePlayer + 1} is the Winner!`)
+  } else {
+    activePlayer = changeTurn(activePlayer)
     }
 }
 
@@ -41,11 +43,7 @@ function resetRoundScore(){
 }
 
 function changeTurn(activePlayer) {
-  if (activePlayer === 0){
-     activePlayer = 1
-  } else {
-     activePlayer = 0
-  }
+  activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
   resetRoundScore()
   return activePlayer
 }
