@@ -1,10 +1,8 @@
-
-var scores = [90,90]
-
-var roundScore = 0
-
 var activePlayer = 0
 // 0 = Player 1, 1 = Player 2
+
+var scores = [0,99]
+var roundScore = 0
 
 var dice
 
@@ -33,9 +31,8 @@ function updateCurrentScore() {
   if (scores[activePlayer] < 100){
     activePlayer = changeTurn(activePlayer)
   } else {
-    console.log(activePlayer + "is the winner")
+    $('#winner-message').text(`Player ${activePlayer + 1} is the Winner!`)
     }
-    resetRoundScore()
 }
 
 function resetRoundScore(){
