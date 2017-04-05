@@ -9,21 +9,24 @@ var dice
 var playerRoundScoreId
 var playerCurrentScoreId
 
-$("#roll-dice").on("click", function(){
+$("#roll-dice").on("click", rollDice);
+
+$('#hold-dice').on("click", updateCurrentScore)
+
+function rollDice(){
   dice = Math.floor(Math.random() * 6) + 1
   $('#dice').attr('src', `dice-${dice}.png`)
 
-  if (dice === 1) {
+  if (dice !== 1) {
+    roundScore += dice
+  } else {
     console.log("player " + (activePlayer + 1 ) + " has lost their turn")
     activePlayer = changeTurn(activePlayer)
-  } else {
-    roundScore += dice
   }
   playerRoundScoreId = `#score-${activePlayer}`
   $(`${playerRoundScoreId}`).text(roundScore)
-});
 
-$('#hold-dice').on("click", updateCurrentScore)
+}
 
 function updateCurrentScore() {
   scores[activePlayer] += roundScore
@@ -37,10 +40,12 @@ function updateCurrentScore() {
     }
 }
 
+
 function resetRoundScore(){
   roundScore = 0
   $(`${playerRoundScoreId}`).text(roundScore)
 }
+
 
 function changeTurn(activePlayer) {
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
