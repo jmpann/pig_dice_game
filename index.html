@@ -32,6 +32,19 @@
             <button class="btn-new" id="new-game"><i class="ion-ios-plus-outline"></i>New game</button>
             <button class="btn-roll" id="roll-dice"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold" id="hold-dice"><i class="ion-ios-download-outline"></i>Hold</button>
+            <button class="btn-instructions"><a class="btn-instructions" href="#popup1"><i class="icon ion-clipboard"></i>Instructions</a></button>
+
+            <div id="popup1" class="overlay">
+              <div class="popup">
+                <h2>Rules</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                  The game has 2 players, playing in rounds. In each turn, a player rolls a dice as many times as he or she wants. Each result will be get added to his or her ROUND score. BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn. The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn. The first player to reach 100 points on GLOBAL score wins the game
+                </div>
+              </div>
+            </div>
+
+
             <h1 align="center" id="winner-message"></h1>
             <h2 align='center' id="lose-turn"></h2>
 
