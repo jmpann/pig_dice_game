@@ -45,6 +45,58 @@ body {
     padding: 100px;
 }
 
+/**********************************************
+*** Instructions Popup
+**********************************************/
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.popup .content .ul {
+    list-style-type: circle;
+}
+
+a:link {
+    text-decoration: none;
+    color: #555;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #555;
+}
+
+
 
 
 /**********************************************
@@ -137,6 +189,10 @@ i {
     transition: margin 0.3s;
 }
 
+/**********************************************
+*** Game
+**********************************************/
+
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
@@ -194,51 +250,4 @@ i {
 .overlay:target {
   visibility: visible;
   opacity: 1;
-}
-
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 5s ease-in-out;
-}
-
-.popup h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
-}
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup .close:hover {
-  color: #06D85F;
-}
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
-}
-
-.popup .content .ul {
-    list-style-type: circle;
-}
-
-a:link {
-    text-decoration: none;
-    color: #555;
-}
-
-a:visited {
-    text-decoration: none;
-    color: #555;
 }

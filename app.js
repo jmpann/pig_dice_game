@@ -3,10 +3,9 @@ var activePlayer, scores, roundScore, dice
 init();
 
 
+
+/* Roll Dice logic. Updates player's round score. */
 $("#roll-dice").on("click", rollDice);
-
-$('#hold-dice').on("click", updateCurrentScore)
-
 function rollDice(){
   dice = Math.floor(Math.random() * 6) + 1
   $('#dice').attr('src', `dice-${dice}.png`)
@@ -22,6 +21,8 @@ function rollDice(){
 
 }
 
+/* Holding Turn updates the players current score */
+$('#hold-dice').on("click", updateCurrentScore)
 function updateCurrentScore() {
   scores[activePlayer] += roundScore
   $('#current-'+activePlayer).text(scores[activePlayer])
@@ -35,12 +36,11 @@ function updateCurrentScore() {
     }
 }
 
-
+/* Helper methods */
 function resetRoundScore(){
   roundScore = 0
   $('#score-'+activePlayer).text(roundScore)
 }
-
 
 function changeTurn(activePlayer) {
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -50,8 +50,9 @@ function changeTurn(activePlayer) {
   return activePlayer
 }
 
-$('#new-game').on("click", init)
 
+/* Initializes a new game */
+$('#new-game').on("click", init)
 function init() {
     scores = [0, 0];
     activePlayer = 0;
