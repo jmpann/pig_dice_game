@@ -58,17 +58,15 @@ function init() {
     roundScore = 0;
     gamePlaying = true;
 
-    document.querySelector('.dice').style.display = 'none';
-
-    document.getElementById('score-0').textContent = '0';
-    document.getElementById('score-1').textContent = '0';
-    document.getElementById('current-0').textContent = '0';
-    document.getElementById('current-1').textContent = '0';
-    document.getElementById('name-0').textContent = 'Player 1';
-    document.getElementById('name-1').textContent = 'Player 2';
-    document.querySelector('.player-0-panel').classList.remove('winner');
-    document.querySelector('.player-1-panel').classList.remove('winner');
-    document.querySelector('.player-0-panel').classList.remove('active');
-    document.querySelector('.player-1-panel').classList.remove('active');
-    document.querySelector('.player-0-panel').classList.add('active');
+    $('#score-0').text('0')
+    $('#score-1').text('0')
+    $('#current-0').text('0')
+    $('#current-1').text('0')
+    $('#name-0').text('Player 1')
+    $('#name-1').text('Player 2')
+    $('#player-0-panel').removeClass('winner');
+    $('#player-1-panel').removeClass('winner');
+    $('#player-0-panel').removeClass('active');
+    $('#player-1-panel').removeClass('active');
+    $('#player-0-panel').addClass('active');
 }
